@@ -1,0 +1,24 @@
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  border-radius: $radius-normal;
+  border: 1px solid $grey-light;
+  padding: $meio-grid-mobile;
+  font-family: $font-secondary;
+  box-shadow: $box-shadow-simples;
+}
+
+.textarea.completo {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  resize: none;
+  box-shadow: none;
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .textarea {
+    font-size: $content-normal;
+    padding: $grid-1-mobile $meio-grid-tablet;
+  }
+}

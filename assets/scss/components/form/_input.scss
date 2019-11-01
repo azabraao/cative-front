@@ -1,0 +1,26 @@
+.text-input {
+  width: 100%;
+  border-radius: $radius-normal;
+  border: 1px solid $grey-light;
+  padding: $meio-grid-mobile;
+  font-family: $font-secondary;
+  box-shadow: $box-shadow-simples;
+}
+
+.text-input.completo {
+  font-size: $title-4;
+  font-family: $font-primary;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .text-input {
+    height: $grid-1-tablet;
+    border-radius: $radius-normal * 2;
+    font-size: $content-normal;
+    padding: $meio-grid-mobile $meio-grid-tablet;
+  }
+}

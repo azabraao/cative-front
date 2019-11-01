@@ -1,0 +1,51 @@
+.modal-overlay {
+  display: none;
+  position: fixed;
+  background: $dark-transparent;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+
+  .modal {
+    width: $grid-15-mobile;
+    margin: 0 auto;
+    background: $white;
+    margin-top: $grid-3-mobile;
+    border-radius: $radius-normal;
+    box-shadow: $box-shadow-simples;
+    padding: $grid-1-mobile;
+
+    .modal__header {
+      text-align: center;
+      padding: $grid-1-mobile 0;
+
+      .modal__title {
+        font-size: $title-3;
+        font-family: $font-primary;
+      }
+    }
+    .modal__body {
+
+    }
+    .modal__footer {
+      display: flex;
+      justify-content: center;
+      padding: $meio-grid-mobile 0;
+    }
+  }
+}
+.modal-overlay.ativo {
+  display: block;
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .modal-overlay {
+    .modal {
+      margin-top: $grid-4-tablet;
+      width: $grid-10-tablet;
+    }
+  }
+}

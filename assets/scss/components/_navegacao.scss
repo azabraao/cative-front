@@ -1,0 +1,336 @@
+.navegacao {
+  transition: background-color $um-segundo;
+  
+  .navegacao__top {
+    padding: $grid-1-mobile $meio-grid-mobile;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .navegacao__back {
+      display: flex;
+      cursor: pointer;
+    }
+    
+    .navegacao__title {
+      font-family: $font-primary;
+      font-size: $title-4;
+    }
+    .navegacao__hamburguer {
+      z-index: 2;
+      cursor: pointer;
+      
+      .hamburguer {
+        .hamburguer__linha {
+          
+        }
+      }
+    }
+  }
+  
+  .navegacao__overlay.ativo {
+    display: block;
+    animation-name: esmaecer;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    
+    .navegacao__items {
+      animation-name: swapIn;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease;
+      animation-duration: .5s;
+    }
+  }
+  
+  .navegacao__overlay {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    transition: background-color 3s;
+    z-index: 1;
+    
+    .navegacao__items {  
+      width: $grid-13-mobile;
+      position: absolute;
+      right: 0;    
+      height: 100%;
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      transition: all 3s; 
+      
+      .navegacao__top-items {
+        background: $white;
+        
+        .navegacao__item {
+          padding: $meio-grid-mobile $grid-1-mobile;
+        }
+        
+        .navegacao__item:first-child {
+          padding-top: $grid-4-mobile;          
+        }
+        
+        .navegacao__perfil {
+          background:$primary;
+          display: flex;
+          padding-bottom: $grid-2-mobile;
+          
+          .navegacao__column-1 {
+            width: $grid-4-mobile;
+            height: $grid-3-mobile;
+            
+            .navegacao__perfil-pic {
+              background-color: $danger;
+              width: 100%;
+              height: 100%;
+              box-shadow: $box-shadow-simples;
+              border-radius: $radius-normal;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              
+              img {
+                padding: $meio-grid-mobile / 2;
+                max-height: 100%;
+                max-width: 100%;
+                overflow: hidden;
+              }
+            }
+          }
+          .navegacao__column-2 {
+            padding-left: $meio-grid-mobile;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            .navegacao__nome {
+              font-size: $content-normal;
+              font-family: $font-primary;
+              color: $white;
+              margin-bottom: $meio-grid-mobile / 2;
+            }
+            .navegacao__estrelas {
+              display: flex;
+              .navegacao__icon-estrela {
+                margin-right: $meio-grid-mobile;
+              }
+              .navegacao__quantidade-estrelas {
+                font-family: $font-primary;
+                color: $white;
+                font-size: $content-small;
+              }
+            }
+          }
+        }
+        
+        .navegacao__button {
+          
+          .navegacao__cta-nova-missao {}
+        }
+        .navegacao__link {
+          font-family: $font-primary;
+          font-size: $content-large;
+          padding: $meio-grid-mobile $grid-1-mobile;
+          
+          a {
+            color: $dark;
+            text-decoration: none;
+          }
+        }
+      }
+      .navegacao__bottom-items {
+        width: 100%;
+        margin-top: auto;
+        
+        .navegacao__get-out {
+          font-family: $font-primary;
+          font-size: $content-large;
+          
+          padding: $meio-grid-mobile $grid-1-mobile;
+          a {
+            color: $dark;
+            text-decoration: none;
+          }
+        }
+      }
+    }    
+  }
+}
+
+.navegacao--desktop {
+  display: none;
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .navegacao {
+    display: none;
+  }
+  
+  .navegacao--desktop {
+    display: block;
+    background-color: $primary-light;
+    transition: background-color $um-segundo;
+    
+    .navegacao--desktop__container {
+      display: flex;
+      padding: $meio-grid-tablet $grid-1-tablet;
+      justify-content: space-between;
+      max-width: $grid-16-desktop;
+      margin: 0 auto;
+      
+      .navegacao--desktop__logo {
+        background-image: url(../img/logotipo.svg);
+        display: block;
+        width: 146px;
+        height: 43px;
+        background-repeat: no-repeat;      
+      }
+      .navegacao--desktop__items {
+        display: flex;
+        align-items: center;
+        
+        .navegacao--desktop__item:not(:first-child) {
+          margin-left: $grid-1-tablet;
+        }
+        .navegacao--desktop__estrelas {
+          display: flex;
+          align-items: center;
+          
+          .navegacao--desktop__icon-estrela {
+            background-image: url(../img/icon-estrela-com-gotas.svg);
+            background-size: contain;
+            width: $grid-2-mobile - $meio-grid-mobile;
+            height: $grid-2-mobile - $meio-grid-mobile;
+          }
+          
+          .navegacao--desktop__quantidade-estrelas {
+            padding-left: $meio-grid-mobile / 2;
+            font-family: $font-primary;
+            font-size: $content-large;
+            color: $white;  
+          }
+        }
+        .navegacao--desktop__item {
+          .dropdown {
+            display: none;
+          }
+        }
+        .navegacao--desktop__item.tem-dropdown.ativo {
+          position: relative;
+          .dropdown {
+            display: block;
+            width: $grid-2-tablet + $meio-grid-tablet;
+            border-radius: $radius-normal;
+            position: absolute;
+            top: 48px;
+            background: white;
+            box-shadow: 0px 0px 1px 0px;
+            left: -35px;
+            
+            .dropdown__links {
+              .dropdown__link:hover {
+                background: $grey-light;
+              }
+              .dropdown__link:first-child {
+                border-top-left-radius: $radius-normal;
+                border-top-right-radius: $radius-normal;
+              }
+              .dropdown__link:last-child {
+                border-bottom-left-radius: $radius-normal;
+                border-bottom-right-radius: $radius-normal;
+              }
+              .dropdown__link {
+                cursor: pointer;
+                
+                a {
+                  display: block;
+                  padding: $grid-1-mobile;
+                  font-family: $font-primary;
+                  color: $dark;
+                  text-decoration: none;
+                }
+              }
+            }
+          } 
+        }
+        .navegacao--desktop__link {
+          font-size: $content-large;
+          font-family: $font-primary;
+          
+          a {
+            color: $white;
+            text-decoration: none;
+          }
+        }
+        .navegacao--desktop__botao {
+          
+        }
+        .navegacao--desktop__perfil {
+          .navegacao--desktop__perfil-wrap {
+            cursor: pointer;
+            border: 3px solid $grey-dark;
+            padding: $meio-grid-mobile;
+            border-radius: 50%;
+            width: $grid-1-tablet;
+            height: $grid-1-tablet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cta-nova-missao {
+  background-color: $danger;
+  width: $grid-9-mobile;
+  font-size: $content-normal;
+  display: block;
+  border-radius: $radius-normal;
+  padding: $meio-grid-mobile;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  font-family: $font-primary;
+  text-decoration: none;
+}
+
+.piscar {
+  animation-name: piscar;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
+}
+
+@keyframes swapIn {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes esmaecer {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: $dark-transparent;
+  }
+}
+
+@keyframes piscar {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}

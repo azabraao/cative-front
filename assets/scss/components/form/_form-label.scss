@@ -1,0 +1,13 @@
+.form-label {
+    display: block;
+    font-size: $content-small;
+    font-family: $font-primary;
+    color: $grey-dark;
+    margin-bottom: $meio-grid-mobile / 2;
+}
+
+@media only screen and (min-width: $mobile-up) {
+    .form-label {
+        font-size: $content-normal;
+    }
+}

@@ -1,0 +1,56 @@
+.form-control {
+  @import 'form-label';
+  @import 'input';
+  @import 'radio-cores';
+  @import 'radio-pontuacoes';
+  @import 'select-input';
+  @import 'textarea';
+  @import 'grupo-opcoes';
+
+  margin-bottom: $grid-1-mobile;
+
+  
+  .form-control__feedback {
+    opacity: 0;
+    max-height: 0;
+    height: 0;
+    color: transparent;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .form-control {
+    margin-bottom: $meio-grid-tablet;
+  }
+}
+
+
+// ERRO
+.form-control.erro {
+  .form-control__feedback {
+    opacity: 1;
+    max-height: none;
+    height: fit-content;
+    font-family: $font-primary;
+    color: $danger;
+    font-size: $content-small;
+    margin-bottom: $meio-grid-mobile / 2;
+    display: block;
+    transition: color .5s;
+  }
+  
+  .text-input,
+  .textarea {
+    border: 2px solid $danger;
+    transition: border .5s;
+  }
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .form-control.erro {
+    .form-control__feedback {
+      font-size: $content-normal;
+    }
+  }
+}

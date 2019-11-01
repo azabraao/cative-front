@@ -1,0 +1,29 @@
+.section {
+
+    &__title {
+        padding: $grid-1-mobile 0;
+        text-align: center;
+        font-family: $font-primary;
+        color: $dark;
+        font-size: $title-4;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: center;
+        padding: $grid-2-mobile 0;
+    }
+}
+
+@media only screen and (min-width: $mobile-up) {
+    .section {
+        &__title {
+            padding: $grid-1-tablet 0;
+            font-size: $title-1;
+        }
+
+        &__bottom {
+            padding: $grid-1-tablet 0;
+        }
+    }
+}

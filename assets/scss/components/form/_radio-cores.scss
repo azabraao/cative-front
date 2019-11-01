@@ -1,0 +1,49 @@
+.radio-cores {
+  height: $grid-5-mobile;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  
+  .radio-cores__row {
+    display: flex;
+    justify-content: space-between;
+    
+    .radio__cor {
+      width: $grid-2-mobile;
+      height: $grid-2-mobile;
+      display: block;
+      border-radius: $radius-small;
+      cursor: pointer;
+      
+      .radio-cores__input {
+        display: none;
+      }   
+    }
+    
+    .radio__cor.ativo {
+      border: 3px solid $dark;
+    }
+    .radio__cor:focus {
+      outline: .1px solid $primary;
+    }
+  } 
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .radio-cores {
+    height: $grid-3-tablet - $meio-grid-mobile;
+
+    .radio-cores__row {
+      
+      .radio__cor {
+        width: $grid-1-tablet + 6;
+        height: $grid-1-tablet + 6;
+      }
+      
+      .radio__cor.ativo {
+        
+      }
+    } 
+  } 
+}

@@ -1,0 +1,30 @@
+.cadastro-usuario {
+  padding:  $grid-1-mobile +  $meio-grid-mobile $grid-1-mobile;
+  
+  .cadastro-usuario__bottom {
+    text-align: center;
+    padding-top: $grid-2-mobile;
+    
+    .cadastro-usuario__bottom-link {
+      color: $grey-dark;
+      font-size: $content-small;
+      font-family: $font-secondary;
+    } 
+  }
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .cadastro-usuario {
+    
+    .form {
+      width: $grid-10-tablet;
+      margin-left: auto;
+      margin-right: auto;
+      padding: $grid-1-tablet;
+    }
+
+    .cadastro-usuario__bottom {
+      padding-top: 0;
+    }
+  }
+}

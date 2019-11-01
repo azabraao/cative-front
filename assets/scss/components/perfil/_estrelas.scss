@@ -1,0 +1,19 @@
+.estrelas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $grid-1-mobile;
+
+  .estrelas__numero {
+    font-size: $content-large;
+    font-family: $font-primary;
+  }
+  .estrelas__estrela {
+    background-image: url(../img/icon-estrela-com-gotas.svg);
+    width: $grid-1-mobile + $meio-grid-mobile;
+    height: $grid-1-mobile + $meio-grid-mobile;
+    display: block;
+    margin-left: $meio-grid-mobile / 2;
+    margin-top: -$meio-grid-mobile / 2;
+  }
+}

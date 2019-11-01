@@ -1,0 +1,51 @@
+.form {
+  
+  .form__section-title {
+    margin: $grid-1-mobile 0;
+    text-align: center;
+  
+    h1,h2,h3,h4,h5,h6 {
+      font-family: $font-primary;
+      font-size: $title-4;
+    }
+  }
+
+  .form__feedback.hide {
+    animation-name: fadeOut;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+  }
+  
+  .form__feedback {
+    padding: $meio-grid-mobile;
+    box-shadow: $box-shadow-simples;
+    font-family: $font-secondary;
+    font-size: $content-small;
+    margin-bottom: $grid-1-mobile;
+    border-radius: $radius-small;
+  }
+  
+  .form__feedback.erro {
+    background: $danger;
+    color: $white;
+  }
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .form {
+    .form__feedback {
+      padding: $grid-1-mobile;
+      font-size: $content-normal;
+    }
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  } 
+  to {
+    opacity: 0;
+  } 
+}

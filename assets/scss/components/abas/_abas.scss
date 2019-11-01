@@ -1,0 +1,60 @@
+.abas {
+  position: absolute;
+  box-shadow: $box-shadow-simples;
+  width: $grid-16-mobile;
+  height: $grid-3-mobile;
+  display: flex;
+  justify-content: space-between;
+  border-radius: $radius-normal $radius-normal 0 0;
+  align-items: stretch;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  
+  .aba.ativo {
+    .aba__nome {
+      color: $dark;
+    }
+  }
+
+  .aba {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .aba__nome {
+      color: $grey;
+      font-size: $content-normal;
+      font-family: $font-primary;
+    }
+  }
+}
+
+
+.data-aba {
+  display: none;
+  padding-top: $grid-1-tablet;
+}
+
+.data-aba.ativo {
+  display: block;
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .abas {
+    position: relative;
+    bottom: unset;
+    border-radius: $radius-normal;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    .aba {
+      cursor: pointer;
+    }
+    .aba:hover {
+      background-color: $grey-light;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.button {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 47px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: $content-small;
+    font-family: $font-secondary;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color $meio-segundo;
+}
+
+.button.loading {
+    background-image: url(../img/loading.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button--small {
+    width: 117px;
+    height: 45px;
+    letter-spacing: .6px;
+}
+
+.button--xs-small {
+    @extend .button;
+    width: 117px;
+    height: 45px;
+    letter-spacing: .6px;
+}
+
+.button--link {
+    box-shadow: none;
+    text-decoration: underline;
+    background: none;
+}
+
+.button--primary {
+    @extend .button;
+    background: $primary;
+    color: $white;
+}
+
+.button--danger {
+    @extend .button;
+    background: $danger;
+    color: $white;
+}
+
+@media only screen and (min-width: $mobile-up) {    
+    .button--xs-small {
+        width: $grid-5-tablet;
+        font-size: $content-normal;
+        height: $grid-1-tablet + $meio-grid-mobile;
+        letter-spacing: .9px;
+    }
+}

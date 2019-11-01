@@ -1,0 +1,21 @@
+.missoes-concluidas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: $meio-grid-mobile 0;
+
+  .missoes-concluidas__texto,
+  .missoes-concluidas__numero {
+    font-size: $content-normal;
+    font-family: $font-primary;
+    margin-right: $meio-grid-mobile / 2;
+  }
+  .missoes-concluidas__medalha {
+    background-image: url(../img/icon-medalha.svg);
+    width: $grid-1-mobile;
+    height: $grid-1-mobile;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

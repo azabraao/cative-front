@@ -1,0 +1,18 @@
+.editar-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .editar-perfil__icone {
+    background-image: url(../img/icon-editar.svg);
+    width: $grid-1-mobile;
+    height: $grid-1-mobile;
+    background-repeat: no-repeat;
+    margin-right: $meio-grid-mobile;
+  } 
+  .editar-perfil__texto {
+    font-family: $font-primary;
+    font-size: $content-small;
+  }
+}

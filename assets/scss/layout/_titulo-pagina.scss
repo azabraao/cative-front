@@ -1,0 +1,17 @@
+.titulo-pagina--mobile {
+  display: block;
+}
+
+.titulo-pagina--desktop {
+  display: none;
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .titulo-pagina--mobile {
+    display: none;
+  }
+  
+  .titulo-pagina--desktop {
+    display: block;
+  }
+}

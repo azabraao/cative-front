@@ -1,0 +1,205 @@
+.perfil {
+  .perfil__cor-capa {
+    content: '';
+    display: block;
+    background-color: $danger;
+    width: 100%;
+    height: $grid-4-mobile;
+    border-radius: 0 0 $grid-1-mobile $grid-1-mobile;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transition: background-color $um-segundo;
+  }
+  
+  .perfil__input-file  {
+    display: none;
+  }
+
+  .perfil__capa {
+    width: 100%;
+    padding-top: $grid-1-mobile + $meio-grid-mobile;
+    position: relative;
+    
+    .perfil__regiao-foto {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: $box-shadow-simples;
+      width: $grid-13-mobile;
+      height: $grid-10-mobile;
+      border-radius: $radius-normal;
+      background: $white;
+      justify-content: flex-end;
+      align-items: center;
+      padding: $grid-1-mobile + $meio-grid-mobile;
+      
+      .perfil__foto-wrap {
+        background: $danger;
+        border-radius: $radius-normal;
+        width: $grid-4-mobile;
+        height: $grid-4-mobile;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: $box-shadow-simples;
+        margin-bottom: $grid-1-mobile;
+        position: relative;
+        transition: background-color $meio-segundo;
+        
+        .perfil__capa-foto-textarea {
+          display: none;
+        }
+
+        img {
+          border-radius: $meio-grid-mobile;
+          max-width: 100%;
+          max-height: $grid-3-mobile;  
+        }
+        
+        @import 'trocar-foto';
+      } 
+      
+      .perfil__nome {
+        font-family: $font-primary;
+        font-size: $content-normal;
+      }
+    }
+  }
+  
+  @import 'estrelas';
+  @import 'missoes-concluidas';
+  
+  .perfil__missoes {
+    display: block;
+  }
+  
+  .perfil__evolucao {
+    display: flex;
+    justify-content: center;
+    margin-top: $grid-1-mobile;
+  }
+  
+  .perfil__cores {
+    display: none;
+    max-width: $grid-14-mobile;  
+    margin: 0 auto;
+    margin-top: $meio-grid-mobile;
+  }
+  
+  .perfil__acessos {
+    display: none;
+    max-width: $grid-14-mobile;  
+    margin: 0 auto;
+    margin-top: $meio-grid-mobile;
+  }
+  
+  .perfil__footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: $grid-1-mobile 0;
+    
+    .perfil__salvar {
+      display: none;
+    }
+    
+    @import 'editar-perfil';
+    
+    .zona-de-perigo {
+      display: none;
+    }
+  }
+}
+
+
+// MODO DE EDIÇÃO ATIVO:
+.perfil.editar {
+  
+  .perfil__capa {
+    
+    .perfil__regiao-foto {
+      
+      .perfil__foto-wrap {        
+        .trocar-foto {
+          display: flex;
+        }
+      } 
+    }
+  }
+  
+  .estrelas {
+    display: none;
+  }
+  
+  .missoes-concluidas {
+    display: none;
+  }
+  
+  .perfil__missoes {
+    display: none;
+  }
+
+  .perfil__evolucao {
+    display: none;
+  }
+  
+  .perfil__cores {
+    margin-top: $grid-2-mobile;
+    display: block;
+  }
+  
+  .perfil__acessos {
+    margin-top: $grid-2-mobile;
+    display: block;
+  }
+  
+  .perfil__footer {
+    
+    .perfil__salvar {
+      display: block;
+    }
+    
+    .editar-perfil {
+      display: none;
+    }
+
+    .zona-de-perigo {
+      display: flex;
+    }
+  }
+}
+
+
+@media only screen and (min-width: $mobile-up) {
+  .perfil {
+    .perfil__cor-capa {
+      height: $grid-2-tablet;
+      border-radius: 0 0 $grid-1-mobile * 3 $grid-1-mobile * 3;
+    }
+    
+    .perfil__cores {
+      max-width: $grid-8-tablet;  
+    }
+    
+    .perfil__acessos {
+      max-width: $grid-8-tablet;  
+    }
+    
+    .perfil__footer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: $grid-1-mobile 0;
+      
+      .perfil__salvar {
+        display: none;
+      }
+      
+      @import 'editar-perfil';
+    }
+  }  
+}

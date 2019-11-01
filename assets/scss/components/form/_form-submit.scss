@@ -1,0 +1,11 @@
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: $grid-2-mobile; 
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .form-submit {
+    margin-top: $grid-1-tablet; 
+  }
+}

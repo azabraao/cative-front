@@ -1,0 +1,7 @@
+.missoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: $grid-13-tablet;
+    margin: 0 auto;
+}

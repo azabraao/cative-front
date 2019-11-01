@@ -1,0 +1,75 @@
+.turmas {
+  padding-top: $meio-grid-mobile;
+
+  .turmas__container {
+    max-width: $grid-13-tablet;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    .turma {
+      width: $grid-14-mobile;
+      height: $grid-3-mobile;
+      border-radius: $radius-small;
+      box-shadow: $box-shadow-simples;
+      border: 2px solid $primary;
+      margin: $meio-grid-mobile;
+      padding: $grid-1-mobile;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      .turma__tira {
+        width: $meio-grid-mobile; 
+        height: 100%;
+        background: $primary;
+        display: block;
+        position: absolute;
+        left: 0;
+      }
+      
+      .turma__nome {
+        font-family: $font-primary;
+        font-size: $title-4;        
+      }
+    }
+    
+    .turma.primary {
+      border-color: $primary;
+      .turma__tira {
+        background: $primary;
+      }
+    }
+    
+    .turma.purple {
+      border-color: $purple-dark;
+      .turma__tira {
+        background: $purple-dark;
+      }
+    }
+    
+    .turma.danger {
+      border-color: $danger;
+      .turma__tira {
+        background: $danger;
+      }
+    }
+    
+    .turma.success {
+      border-color: $success;
+      .turma__tira {
+        background: $success;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $mobile-up) {
+  .turmas {
+    padding-top: 0;
+    margin-top: -$meio-grid-mobile;
+  }
+}
