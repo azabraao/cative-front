@@ -126,6 +126,9 @@ if(!!missoesWrapper) {
   let cards = document.querySelectorAll('.jsCardMissao');
  cards.forEach(card => {
    card.addEventListener('click', function () {
+     window.scrollTo({
+       top: 0
+     })
      document.body.style.overflow = "hidden";
 
      document.querySelector('.jsBack').addEventListener('click', function(e) {
