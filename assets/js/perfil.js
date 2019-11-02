@@ -56,6 +56,7 @@ const fotoPerfil = {
       let output = document.querySelector('.jsFotoPerfil');
       let textarea = document.querySelector('.jsTextAreaDataFoto');
       output.src = dataURL;
+      localStorage.setItem("fotoAluno", dataURL);
       textarea.textContent = dataURL;
     };
     reader.readAsDataURL(input.files[0]);

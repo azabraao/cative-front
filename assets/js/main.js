@@ -66,7 +66,12 @@ let modalMissao = {
     event.target === modalMissao.overlay ? modalMissao.toggle() : null;
   },
   toggle() {
-    modalMissao.overlay.classList.toggle('active');
+    if(modalMissao.overlay.classList.contains('active')) {
+      modalMissao.overlay.classList.remove('active');
+      document.body.style.overflow = "scroll";
+    } else {
+      modalMissao.overlay.classList.add('active');
+    }
   },
   titulo(titulo) {
     let tituloMissao = document.querySelector('.jsModalTitulo');

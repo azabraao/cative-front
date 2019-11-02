@@ -28,7 +28,8 @@
           <label for="" class="form-label">Cadastrar como</label>
           <div class="grupo-opcoes">
             <div class="grupo-opcoes__opcao jsOpcaoTipoUsusario ativo" tabindex="0">
-              <input type="radio" name="tipo_usuario" value="professor" class="grupo-opcoes__input jsRadioInput">
+              <input checked="checked" type="radio" name="tipo_usuario" value="professor"
+                class="grupo-opcoes__input jsRadioInput">
               <div class="grupo-opcoes__texto">
                 Professor
               </div>
@@ -37,12 +38,6 @@
               <input type="radio" name="tipo_usuario" value="aluno" class="grupo-opcoes__input jsRadioInput">
               <div class="grupo-opcoes__texto">
                 Aluno
-              </div>
-            </div>
-            <div class="grupo-opcoes__opcao jsOpcaoTipoUsusario" tabindex="0">
-              <input type="radio" name="tipo_usuario" value="responsavel" class="grupo-opcoes__input jsRadioInput">
-              <div class="grupo-opcoes__texto">
-                Responsável
               </div>
             </div>
           </div>
@@ -56,9 +51,9 @@
           <input type="password" placeholder="Ex.: *********" class="text-input">
         </div>
         <div class="form-submit">
-          <button type="submit" class="button button--small button--primary">
+          <a type="submit" class="jsLoading jsBtnCadastreSe button button--small button--primary">
             Cadastrar
-          </button>
+          </a>
         </div>
       </form>
 
@@ -73,6 +68,7 @@
 
 </body>
 
-<script src="./assets/js/cadastre-se.js"></script>
+<script src="./assets/js/cadastre-se.js?a=1"></script>
+<script src="./assets/js/apresentacao.js?a=1"></script>
 
 </html>

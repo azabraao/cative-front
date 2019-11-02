@@ -1,5 +1,5 @@
 .abas {
-  position: absolute;
+  position: fixed;
   box-shadow: $box-shadow-simples;
   width: $grid-16-mobile;
   height: $grid-3-mobile;
@@ -11,7 +11,8 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  
+  background: $white;
+
   .aba.ativo {
     .aba__nome {
       color: $dark;

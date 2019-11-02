@@ -98,7 +98,7 @@ th {
 .section__bottom {
   display: flex;
   justify-content: center;
-  padding: 40px 0; }
+  padding: 40px 0 80px 0; }
 
 @media only screen and (min-width: 768px) {
   .section__title {
@@ -137,7 +137,8 @@ th {
   top: 63px;
   display: none;
   height: 100%;
-  background: #DFE6E9; }
+  background: #DFE6E9;
+  overflow-y: scroll; }
 
 .missao-overlay.concluida .modal-missao .modal-missao__footer .button, .missao-overlay.concluida .modal-missao .modal-missao__footer .button--xs-small, .missao-overlay.concluida .modal-missao .modal-missao__footer .button--primary, .missao-overlay.concluida .modal-missao .modal-missao__footer .button--danger {
   transform: scale(1.2) translateY(-10px);
@@ -922,7 +923,7 @@ th {
     width: 480px; } }
 
 .abas {
-  position: absolute;
+  position: fixed;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   width: 320px;
   height: 60px;
@@ -933,7 +934,8 @@ th {
   bottom: 0;
   margin: 0 auto;
   left: 0;
-  right: 0; }
+  right: 0;
+  background: #fff; }
   .abas .aba.ativo .aba__nome {
     color: #2D3436; }
   .abas .aba {

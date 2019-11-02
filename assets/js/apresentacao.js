@@ -106,17 +106,8 @@ if(!!btnSalvaMissao) {
 }
 
 // qualquer lugar com missões
+
 let missoesWrapper = document.querySelector('.missoes');
-if(!!missoesWrapper) {
-  let cards = document.querySelectorAll('.jsCardMissao');
-  cards.forEach(card => {
-    card.addEventListener('click', function () {
-      document.querySelector('.jsBack').addEventListener('click', function(e) {
-        window.location.reload();
-      })
-    }) 
-  });    
-}
 
 if(localStorage.getItem('temMissaoCadastrada') === 'true') {
   if(!!missoesWrapper) {
@@ -129,6 +120,19 @@ if(localStorage.getItem('temMissaoCadastrada') === 'true') {
   console.log('tem missao cadastrada');
 } else {
   console.log('não tem missao cadastrada');
+}
+
+if(!!missoesWrapper) {
+  let cards = document.querySelectorAll('.jsCardMissao');
+ cards.forEach(card => {
+   card.addEventListener('click', function () {
+     document.body.style.overflow = "hidden";
+
+     document.querySelector('.jsBack').addEventListener('click', function(e) {
+       window.location.reload();
+     })
+   }) 
+ });    
 }
 
 
@@ -147,7 +151,7 @@ function constroiCardMissao() {
   <h3>${localStorage.getItem('missaoObjetivo')}</h3>
   </div>
   <div class="card-missao__pontos">
-  <i class="icon icon-star"></i>
+  <i class="icon icon-star jsEstrela"></i>
   <span>${localStorage.getItem('missaoEstrelas')} estrelas</span>
   </div>
   </div>
@@ -219,7 +223,28 @@ if(!!btnConcluiMissao) {
   });
 }
 
-console.log()
+// Cadastre-se
+let btnCadastreSe = document.querySelector('.jsBtnCadastreSe');
+!!btnCadastreSe ?
+  btnCadastreSe.addEventListener('click', function() {
+    let inputsTipos = document.querySelectorAll('.jsRadioInput');
+    let tipoSelecionado = null;
+    inputsTipos.forEach(input => {
+      input.checked ? tipoSelecionado  = input.value : null;
+    });
+
+    reset();
+    
+    setTimeout(function() {
+      if(tipoSelecionado == "professor") {
+        window.location.href = "turmas.html"
+      } else {
+        window.location.href = "missoes.html"
+      }
+    },2000);
+
+  })
+: null;
 
 function reset() {
   localStorage.clear();
